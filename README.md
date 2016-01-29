@@ -17,6 +17,11 @@ This is a capistrano v3 plugin that integrates Unicorn tasks into capistrano dep
 - To use unicorn with rvm add it to rvm bins:
 
     `set :rvm_map_bins, fetch(:rvm_map_bins, []).push('unicorn')`
+    
+- To use unicorn with rbenv add it to rvm bins:
+
+
+    `set :rbenv_map_bins, fetch(:rbenv_map_bins).to_a.concat(%w(unicorn))`
 
 ### Conventions
 
