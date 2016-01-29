@@ -6,6 +6,12 @@ namespace :load do
     set :unicorn_options, -> { "" }
     set :unicorn_rack_env, -> { fetch(:rails_env) == "development" ? "development" : "deployment" }
     set :unicorn_restart_sleep_time, 3
+    # Rbenv, Chruby, and RVM integration
+    set :rbenv_map_bins, fetch(:rbenv_map_bins).to_a.concat(%w(unicorn))
+    set :rvm_map_bins, fetch(:rvm_map_bins).to_a.concat(%w(unicorn))
+    set :chruby_map_bins, fetch(:chruby_map_bins).to_a.concat(%w{unicorn})
+    # Bundler integration
+    set :bundle_bins, fetch(:bundle_bins).to_a.concat(%w(unicorn))
   end
 end
 
