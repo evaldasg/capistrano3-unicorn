@@ -14,6 +14,10 @@ This is a capistrano v3 plugin that integrates Unicorn tasks into capistrano dep
     
     `set :bundle_bins, fetch(:bundle_bins, []).push('unicorn')`
 
+- To use unicorn with rvm add it to rvm bins:
+
+    `set :rvm_map_bins, fetch(:rvm_map_bins, []).push('unicorn')`
+
 ### Conventions
 
 You can override the defaults by `set :unicorn_example, value` in the `config/deploy.rb` or `config/deploy/ENVIRONMENT.rb` capistrano deployment files.
