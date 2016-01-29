@@ -9,6 +9,10 @@ This is a capistrano v3 plugin that integrates Unicorn tasks into capistrano dep
 - When running tasks not during a full deployment, you may need to run the `rvm:hook`:
 
     `cap production rvm:hook unicorn:start`
+    
+- To use unicorn with bundler, you'll have to add the `capistrano-bundler` gem, and add the unicorn command to the bundle bins:
+    
+    `set :bundle_bins, fetch(:bundle_bins, []).push('unicorn')`
 
 ### Conventions
 
